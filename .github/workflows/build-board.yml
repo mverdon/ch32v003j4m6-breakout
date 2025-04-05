@@ -3,8 +3,9 @@ on: [push]
 jobs:
   validate:
     runs-on: ubuntu-latest
-    container: kicad/kicad:9.0
-    options: --user root
+    container:
+      image: kicad/kicad:9.0
+      options: --user root
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
