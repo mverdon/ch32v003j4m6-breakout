@@ -1,7 +1,7 @@
 name: KiCad CI
 on: [push]
 jobs:
-  validate:
+  build:
     runs-on: ubuntu-latest
     container:
       image: kicad/kicad:9.0
@@ -18,3 +18,11 @@ jobs:
         path: outputs/validation/*.json
         retention-days: 1
         overwrite: true
+    - name: Run Build
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+      run: ci/build.sh
+    - name: Save Board Files
+      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+      uses: actions/upload-artifact@v4
+      with:
+        path: outputs/*.zip
