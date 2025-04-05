@@ -1,0 +1,10 @@
+name: KiCad CI
+on: [push]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    container: kicad/kicad:9.0
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run ERC/DRC
+      run: ci/validate.sh
