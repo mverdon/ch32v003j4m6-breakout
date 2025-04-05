@@ -149,7 +149,7 @@
 		(path "/08e000a9-c876-4e3d-be50-72324982c0d5")
 		(sheetname "/")
 		(sheetfile "ch32v003j4m6-breakout.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.77 -1.77)
 			(end -1.77 9.39)
@@ -366,7 +366,7 @@
 		(path "/012dbc60-3f5e-413d-9f7c-f569e645ebc2")
 		(sheetname "/")
 		(sheetfile "ch32v003j4m6-breakout.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.77 -1.77)
 			(end -1.77 9.39)
