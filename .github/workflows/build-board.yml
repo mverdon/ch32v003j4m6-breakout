@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: kicad/kicad:9.0
-      options: --user root
+      options: --user kicad
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
