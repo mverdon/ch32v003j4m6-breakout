@@ -4,11 +4,9 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     container: kicad/kicad:9.0
+    options: --user root
     steps:
     - name: Checkout Code
       uses: actions/checkout@v4
-      with:
-        clean: false
-        set-safe-directory: false
     - name: Run ERC/DRC
       run: ci/validate.sh
