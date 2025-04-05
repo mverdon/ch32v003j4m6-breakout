@@ -5,9 +5,13 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: kicad/kicad:9.0
-      options: --user kicad
+      options: --user root
     steps:
-    - name: Checkout Code
+    - name: Check out Code
       uses: actions/checkout@v4
+    - name: Set up KiCad
+      run: |
+        mkdir -p /root/.config/kicad/$(kicad-cli -v | cut -d . -f 1,2)
+        cp /usr/share/kicad/template/*-lib-table /root/.config/kicad/$(kicad-cli -v | cut -d . -f 1,2)
     - name: Run ERC/DRC
       run: ci/validate.sh
