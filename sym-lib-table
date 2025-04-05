@@ -1,0 +1,5 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Connector_Generic")(type "KiCad")(uri "${KICAD9_SYMBOL_DIR}/Connector_Generic.kicad_sym")(options "")(descr ""))
+  (lib (name "MCU_WCH_CH32V0")(type "KiCad")(uri "${KICAD9_SYMBOL_DIR}/MCU_WCH_CH32V0.kicad_sym")(options "")(descr ""))
+)
