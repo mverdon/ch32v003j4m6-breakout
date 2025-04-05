@@ -15,3 +15,10 @@ jobs:
         cp /usr/share/kicad/template/*-lib-table /root/.config/kicad/$(kicad-cli -v | cut -d . -f 1,2)
     - name: Run ERC/DRC
       run: ci/validate.sh
+    - name: Save ERC/DRC Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: reports
+        path: outputs/validation/*.json
+        retention-days: 1
+        overwrite: true
